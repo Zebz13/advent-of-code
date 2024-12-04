@@ -2,7 +2,8 @@ from inputs.day_4 import *
 
 array_list = data.split('\n')
 
-
+##normal bruteforce approach. identify which all moves to take, iterate over the same direction 3 more steps(MAS) X is already found.
+##break and set flag if it does not find XMAS in the order
 directions = [[0,1],[0,-1],[1,0],[-1,0],[1,1],[-1,-1],[-1,1],[1,-1]]
 i_lim = len(array_list)
 j_lim = len(array_list[0])
@@ -26,7 +27,8 @@ for start_i in range(i_lim):
                     count+=1
 print(count)
 
-
+##directions to look has reduced since we activate on finding A. Made key pair thinking it would be easier - made it worse
+#create opposite pairs. If one is M other should be S and vice versa. Count if both keyvalue pair satisfies this
 directions = {(1,1):(-1,-1),(-1,1):(1,-1)}
 i_lim = len(array_list)
 j_lim = len(array_list[0])
